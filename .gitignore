@@ -1,0 +1,39 @@
+# Dependencias
+node_modules/
+dist/
+build/
+out/
+
+# Entornos
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Editor/IDE
+.vscode/
+.trae/
+.idea/
+*.swp
+*.swo
+
+# Logs y debug
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+coverage/
+.nyc_output/
+
+# Misceláneo
+.DS_Store
+*.tsbuildinfo
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+bun.lockb
+
