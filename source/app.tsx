@@ -1,89 +1,48 @@
 import React, { useState } from 'react';
-import { Text, Box } from 'ink';
-import SelectInput from 'ink-select-input';
-import BigText from 'ink-big-text';
+import { Box } from 'ink';
+import Header from './components/Header.js';
+import Body from './components/Body.js';
+import NavOptions from './components/navOptions/NavOptionsPanel.js';
 
-const firtCat = () => {
-  return (
-    <Box flexDirection="column" >
-      <Text>     /\-/\ </Text>
-      <Text>    ( o.o )</Text>
-      <Text>/    \   /</Text>
-      <Text>|     \_/ </Text>
-      <Text> \   /   \ </Text>
-      <Text>  \_(_____)</Text>
-    </Box>
-  );
-}
+import FirstCat from './components/animals/cat/FirstCat.js';
+import SecondCat from './components/animals/cat/SecondCat.js';
+import ThirdCat from './components/animals/cat/ThirdCat.js';
 
-const secondCat = () => {
-  return (
-    <Box flexDirection="column">
-      <Text>     /\-/\ </Text>
-      <Text>    (  o.o)</Text>
-      <Text>\    \   /</Text>
-      <Text> |    \_/ </Text>
-      <Text> \   /   \ </Text>
-      <Text>  \_(_____)</Text>
-    </Box>
-  )
-}
-
-const thirdCat = () => {
-  return (
-    <Box flexDirection="column">
-      <Text>     /\-/\ </Text>
-      <Text>    (o.o  )</Text>
-      <Text>/    \   /</Text>
-      <Text>|     \_/ </Text>
-      <Text> \   /   \ </Text>
-      <Text>  \_(_____)</Text>
-    </Box>
-  )
-}
-
-/// TODO: Animation the gat
 export default function App() {
-  const [cat, setCat] = useState<number>(0);
-  const cats: Array<Function> = [firtCat, secondCat, thirdCat];
+  const [indexAnimal, setIndexAnimal] = useState<number>(0);
+  const [navTitle, _] = useState<string>('Selecciona una opción');
+  const animal: Array<() => JSX.Element> = [FirstCat, SecondCat, ThirdCat];
 
   const handleResponse = [
     {
-      label: 'Si',
-      value: "Y"
+      label: 'Iniciar Juego',
+      value: "start"
     },
     {
-      label: 'No',
-      value: "N"
+      label: 'Creditos y Agradecimientos',
+      value: "credits"
+    },
+    {
+      label: 'Salir',
+      value: "exit"
     }
   ]
 
   setTimeout(() => {
-    if (cat < cats.length - 1) {
-      setCat(cat + 1);
+    if (indexAnimal < animal.length - 1) {
+      setIndexAnimal(indexAnimal + 1);
       return;
     }
 
-    setCat(0);
+    setIndexAnimal(0);
   }, 2000);
 
   return (
     <Box flexDirection='column' alignItems='center'>
-      <BigText text='Play ZS' />
-      <Text>Piensa en un animal y miremos si lo adivino</Text>
-      <Box flexDirection='column' minWidth={80} >
-        <Box flexDirection='row' justifyContent='space-between' padding={1} paddingBottom={0}>
-          <Text bold color={'blackBright'}>ZOO en la Sombra</Text>
-          <Text bold>Preguntas: 0</Text>
-        </Box>
-        <Box flexDirection="row" borderStyle={'round'} paddingX={4} paddingY={2} borderColor={'#666666'} gap={8}>
-          {cats[cat] ? cats[cat]() : firtCat()}
-          <Box flexDirection='column' rowGap={2}>
-            <Text bold>¿ Pregunta sobre el animal ?</Text>
-            <SelectInput items={handleResponse} />
-          </Box>
-        </Box>
-      </Box>
+      <Header />
+      <Body currentAnimal={indexAnimal} animals={animal} questionCount={0} >
+        <NavOptions question={navTitle} options={handleResponse} />
+      </Body>
     </Box>
   );
 

@@ -1,0 +1,15 @@
+import React from 'react';
+import { Box, Text } from 'ink';
+
+export default function SecondCat() {
+    return (
+        <Box flexDirection="column">
+            <Text>     /\-/\ </Text>
+            <Text>    (  o.o)</Text>
+            <Text>\    \   /</Text>
+            <Text> |    \_/ </Text>
+            <Text> \   /   \ </Text>
+            <Text>  \_(_____)</Text>
+        </Box>
+    );
+}
