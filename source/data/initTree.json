@@ -1,171 +1,171 @@
 {
-    "question": "¿Tiene pelo?",
-    "yes": {
-        "question": "¿Es doméstico?",
-        "yes": {
-            "question": "¿Ladra?",
-            "yes": {
-                "animal": "Perro"
-            },
-            "no": {
-                "question": "¿Maúlla?",
-                "yes": {
-                    "animal": "Gato"
-                },
-                "no": {
-                    "question": "¿Da leche que consumen los humanos?",
-                    "yes": {
-                        "animal": "Vaca"
-                    },
-                    "no": {
-                        "question": "¿Da lana?",
-                        "yes": {
-                            "animal": "Oveja"
-                        },
-                        "no": {
-                            "question": "¿Se usa para montar?",
-                            "yes": {
-                                "animal": "Caballo"
-                            },
-                            "no": {
-                                "animal": "Cerdo"
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "no": {
-            "question": "¿Tiene trompa?",
-            "yes": {
-                "animal": "Elefante"
-            },
-            "no": {
-                "question": "¿Es un felino salvaje y ruge?",
-                "yes": {
-                    "animal": "León"
-                },
-                "no": {
-                    "question": "¿Lleva a su cría en una bolsa?",
-                    "yes": {
-                        "animal": "Canguro"
-                    },
-                    "no": {
-                        "question": "¿Es muy pequeño y se esconde en madrigueras?",
-                        "yes": {
-                            "animal": "Ratón"
-                        },
-                        "no": {
-                            "animal": "Elefante marino"
-                        }
-                    }
-                }
-            }
-        }
-    },
-    "no": {
-        "question": "¿Tiene plumas?",
-        "yes": {
-            "question": "¿Vive en el agua y no puede volar?",
-            "yes": {
-                "animal": "Pingüino"
-            },
-            "no": {
-                "question": "¿Imita sonidos humanos?",
-                "yes": {
-                    "animal": "Loro"
-                },
-                "no": {
-                    "question": "¿Es nocturno?",
-                    "yes": {
-                        "animal": "Búho"
-                    },
-                    "no": {
-                        "question": "¿Caza otras aves o mamíferos?",
-                        "yes": {
-                            "animal": "Águila"
-                        },
-                        "no": {
-                            "animal": "Gaviota"
-                        }
-                    }
-                }
-            }
-        },
-        "no": {
-            "question": "¿Tiene escamas?",
-            "yes": {
-                "question": "¿Vive principalmente en el agua?",
-                "yes": {
-                    "question": "¿Su esqueleto es cartilaginoso?",
-                    "yes": {
-                        "animal": "Tiburón"
-                    },
-                    "no": {
-                        "question": "¿Tiene caparazón duro?",
-                        "yes": {
-                            "animal": "Tortuga"
-                        },
-                        "no": {
-                            "animal": "Pez de colores"
-                        }
-                    }
-                },
-                "no": {
-                    "question": "¿Le gusta tomar el sol y trepar árboles?",
-                    "yes": {
-                        "animal": "Iguana"
-                    },
-                    "no": {
-                        "question": "¿Tiene mandíbulas fuertes con dientes afilados?",
-                        "yes": {
-                            "animal": "Cocodrilo"
-                        },
-                        "no": {
-                            "animal": "Serpiente"
-                        }
-                    }
-                }
-            },
-            "no": {
-                "question": "¿Piel húmeda?",
-                "yes": {
-                    "question": "¿Salta?",
-                    "yes": {
-                        "animal": "Rana"
-                    },
-                    "no": {
-                        "animal": "Salamandra"
-                    }
-                },
-                "no": {
-                    "question": "¿Tiene alas?",
-                    "yes": {
-                        "question": "¿Vuelo diurno y colores brillantes?",
-                        "yes": {
-                            "animal": "Mariposa"
-                        },
-                        "no": {
-                            "question": "¿Pica y su zumbido es molesto?",
-                            "yes": {
-                                "animal": "Mosquito"
-                            },
-                            "no": {
-                                "question": "¿Producción de miel?",
-                                "yes": {
-                                    "animal": "Abeja"
-                                },
-                                "no": {
-                                    "animal": "Libélula"
-                                }
-                            }
-                        }
-                    },
-                    "no": {
-                        "animal": "Caracol"
-                    }
-                }
-            }
-        }
-    }
+	"question": "¿Tiene pelo?",
+	"yes": {
+		"question": "¿Es doméstico?",
+		"yes": {
+			"question": "¿Ladra?",
+			"yes": {
+				"animal": "Perro"
+			},
+			"no": {
+				"question": "¿Maúlla?",
+				"yes": {
+					"animal": "Gato"
+				},
+				"no": {
+					"question": "¿Da leche que consumen los humanos?",
+					"yes": {
+						"animal": "Vaca"
+					},
+					"no": {
+						"question": "¿Da lana?",
+						"yes": {
+							"animal": "Oveja"
+						},
+						"no": {
+							"question": "¿Se usa para montar?",
+							"yes": {
+								"animal": "Caballo"
+							},
+							"no": {
+								"animal": "Cerdo"
+							}
+						}
+					}
+				}
+			}
+		},
+		"no": {
+			"question": "¿Tiene trompa?",
+			"yes": {
+				"animal": "Elefante"
+			},
+			"no": {
+				"question": "¿Es un felino salvaje y ruge?",
+				"yes": {
+					"animal": "León"
+				},
+				"no": {
+					"question": "¿Lleva a su cría en una bolsa?",
+					"yes": {
+						"animal": "Canguro"
+					},
+					"no": {
+						"question": "¿Es muy pequeño y se esconde en madrigueras?",
+						"yes": {
+							"animal": "Ratón"
+						},
+						"no": {
+							"animal": "Elefante marino"
+						}
+					}
+				}
+			}
+		}
+	},
+	"no": {
+		"question": "¿Tiene plumas?",
+		"yes": {
+			"question": "¿Vive en el agua y no puede volar?",
+			"yes": {
+				"animal": "Pingüino"
+			},
+			"no": {
+				"question": "¿Imita sonidos humanos?",
+				"yes": {
+					"animal": "Loro"
+				},
+				"no": {
+					"question": "¿Es nocturno?",
+					"yes": {
+						"animal": "Búho"
+					},
+					"no": {
+						"question": "¿Caza otras aves o mamíferos?",
+						"yes": {
+							"animal": "Águila"
+						},
+						"no": {
+							"animal": "Gaviota"
+						}
+					}
+				}
+			}
+		},
+		"no": {
+			"question": "¿Tiene escamas?",
+			"yes": {
+				"question": "¿Vive principalmente en el agua?",
+				"yes": {
+					"question": "¿Su esqueleto es cartilaginoso?",
+					"yes": {
+						"animal": "Tiburón"
+					},
+					"no": {
+						"question": "¿Tiene caparazón duro?",
+						"yes": {
+							"animal": "Tortuga"
+						},
+						"no": {
+							"animal": "Pez de colores"
+						}
+					}
+				},
+				"no": {
+					"question": "¿Le gusta tomar el sol y trepar árboles?",
+					"yes": {
+						"animal": "Iguana"
+					},
+					"no": {
+						"question": "¿Tiene mandíbulas fuertes con dientes afilados?",
+						"yes": {
+							"animal": "Cocodrilo"
+						},
+						"no": {
+							"animal": "Serpiente"
+						}
+					}
+				}
+			},
+			"no": {
+				"question": "¿Piel húmeda?",
+				"yes": {
+					"question": "¿Salta?",
+					"yes": {
+						"animal": "Rana"
+					},
+					"no": {
+						"animal": "Salamandra"
+					}
+				},
+				"no": {
+					"question": "¿Tiene alas?",
+					"yes": {
+						"question": "¿Vuelo diurno y colores brillantes?",
+						"yes": {
+							"animal": "Mariposa"
+						},
+						"no": {
+							"question": "¿Pica y su zumbido es molesto?",
+							"yes": {
+								"animal": "Mosquito"
+							},
+							"no": {
+								"question": "¿Producción de miel?",
+								"yes": {
+									"animal": "Abeja"
+								},
+								"no": {
+									"animal": "Libélula"
+								}
+							}
+						}
+					},
+					"no": {
+						"animal": "Caracol"
+					}
+				}
+			}
+		}
+	}
 }

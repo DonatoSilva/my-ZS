@@ -1,39 +1,41 @@
-import React, { createContext, ReactNode, useState } from "react";
-import { NavOptionsContextProps, NavOptionsPanelProps } from "../interfaces/NavOptionsPanel.js";
+import React, { createContext, ReactNode, useState } from 'react';
+import {
+	NavOptionsContextProps,
+	NavOptionsPanelProps,
+} from '../interfaces/navOptionsPanel.js';
 
 export const navInitOptions = [
-    {
-        label: 'Iniciar Juego',
-        value: "start"
-    },
-    {
-        label: 'Creditos y Agradecimientos',
-        value: "credits"
-    },
-    {
-        label: 'Salir',
-        value: "exit"
-    }
-]
-
+	{
+		label: 'Iniciar Juego',
+		value: 'start',
+	},
+	{
+		label: 'Creditos y Agradecimientos',
+		value: 'credits',
+	},
+	{
+		label: 'Salir',
+		value: 'exit',
+	},
+];
 
 export const NavOptionsContext = createContext<NavOptionsContextProps>({
-    navOptions: {
-        question: "¿Que desea hacer?",
-        options: navInitOptions
-    },
-    setNavOptions: () => { }
-})
+	navOptions: {
+		question: '¿Que desea hacer?',
+		options: navInitOptions,
+	},
+	setNavOptions: () => { },
+});
 
 export const NavOptionsProvider = ({ children }: { children: ReactNode }) => {
-    const [navOptions, setNavOptions] = useState<NavOptionsPanelProps>({
-        question: "¿Que desea hacer?",  // Usar la pregunta inicial
-        options: navInitOptions  // Usar las opciones definidas
-    });
+	const [navOptions, setNavOptions] = useState<NavOptionsPanelProps>({
+		question: '¿Que desea hacer?', 
+		options: navInitOptions,
+	});
 
-    return (
-        <NavOptionsContext.Provider value={{ navOptions, setNavOptions }}>
-            {children}
-        </NavOptionsContext.Provider>
-    )
+	return (
+		<NavOptionsContext.Provider value={{ navOptions, setNavOptions }}>
+			{children}
+		</NavOptionsContext.Provider>
+	);
 };
