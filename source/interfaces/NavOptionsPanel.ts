@@ -6,4 +6,9 @@ interface NavOptionsPanelProps {
     }>;
 }
 
-export type { NavOptionsPanelProps };
+interface NavOptionsContextProps {
+    navOptions: NavOptionsPanelProps;
+    setNavOptions: (navOptions: NavOptionsPanelProps) => void;
+}
+
+export type { NavOptionsPanelProps, NavOptionsContextProps };

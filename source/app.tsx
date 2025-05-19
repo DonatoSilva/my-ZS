@@ -8,25 +8,11 @@ import FirstCat from './components/animals/cat/FirstCat.js';
 import SecondCat from './components/animals/cat/SecondCat.js';
 import ThirdCat from './components/animals/cat/ThirdCat.js';
 
+import { NavOptionsProvider } from './contexts/index.js';
+
 export default function App() {
   const [indexAnimal, setIndexAnimal] = useState<number>(0);
-  const [navTitle, _] = useState<string>('Selecciona una opción');
   const animal: Array<() => JSX.Element> = [FirstCat, SecondCat, ThirdCat];
-
-  const handleResponse = [
-    {
-      label: 'Iniciar Juego',
-      value: "start"
-    },
-    {
-      label: 'Creditos y Agradecimientos',
-      value: "credits"
-    },
-    {
-      label: 'Salir',
-      value: "exit"
-    }
-  ]
 
   setTimeout(() => {
     if (indexAnimal < animal.length - 1) {
@@ -37,13 +23,15 @@ export default function App() {
     setIndexAnimal(0);
   }, 2000);
 
+  // Mover el Provider al nivel más alto
   return (
-    <Box flexDirection='column' alignItems='center'>
-      <Header />
-      <Body currentAnimal={indexAnimal} animals={animal} questionCount={0} >
-        <NavOptions question={navTitle} options={handleResponse} />
-      </Body>
-    </Box>
+    <NavOptionsProvider>
+      <Box flexDirection='column' alignItems='center' width={"100%"}>
+        <Header />
+        <Body currentAnimal={indexAnimal} animals={animal} questionCount={0} >
+          <NavOptions />
+        </Body>
+      </Box>
+    </NavOptionsProvider>
   );
-
 }

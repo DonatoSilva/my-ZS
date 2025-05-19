@@ -3,7 +3,7 @@ import { Box, Text } from 'ink';
 
 export default function SecondCat() {
     return (
-        <Box flexDirection="column">
+        <Box flexDirection="column" minWidth={11}>
             <Text>     /\-/\ </Text>
             <Text>    (  o.o)</Text>
             <Text>\    \   /</Text>
