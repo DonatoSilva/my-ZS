@@ -56,7 +56,13 @@
 							"animal": "Ratón"
 						},
 						"no": {
-							"animal": "Elefante marino"
+							"question": "¿Es conocido por su gran nariz o trompa distintiva?",
+							"yes": {
+								"animal": "Elefante marino"
+							},
+							"no": {
+								"animal": "Manatí"
+							}
 						}
 					}
 				}
@@ -86,7 +92,13 @@
 							"animal": "Águila"
 						},
 						"no": {
-							"animal": "Gaviota"
+							"question": "¿Se le encuentra comúnmente cerca del mar o grandes lagos?",
+							"yes": {
+								"animal": "Gaviota"
+							},
+							"no": {
+								"animal": "Paloma"
+							}
 						}
 					}
 				}
@@ -162,7 +174,13 @@
 						}
 					},
 					"no": {
-						"animal": "Caracol"
+						"question": "¿Tiene una concha protectora visible?",
+						"yes": {
+							"animal": "Caracol"
+						},
+						"no": {
+							"animal": "Lombriz de tierra"
+						}
 					}
 				}
 			}

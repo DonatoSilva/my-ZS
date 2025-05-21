@@ -5,7 +5,7 @@ export interface AnimalNode {
 export interface QuestionNode {
     question: string;
     yes: TreeNode;
-    no: TreeNode;
+    no: TreeNode | null;
 }
 
 export type TreeNode = AnimalNode | QuestionNode;

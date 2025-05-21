@@ -1,4 +1,4 @@
-interface NavOptionsPanelProps {
+interface NavOptionsPanelType {
 	question: string;
 	options: Array<{
 		label: string;
@@ -6,9 +6,9 @@ interface NavOptionsPanelProps {
 	}>;
 }
 
-interface NavOptionsContextProps {
-	navOptions: NavOptionsPanelProps;
-	setNavOptions: (navOptions: NavOptionsPanelProps) => void;
+interface NavOptionsContextType {
+	navOptions: NavOptionsPanelType;
+	setNavOptions: (navOptions: NavOptionsPanelType) => void;
 }
 
-export type {NavOptionsPanelProps, NavOptionsContextProps};
+export type { NavOptionsPanelType as NavOptionsPanelProps, NavOptionsContextType as NavOptionsContextProps };
