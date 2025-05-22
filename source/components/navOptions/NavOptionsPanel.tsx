@@ -1,4 +1,4 @@
-import React, { useContext, useMemo, useState } from 'react';
+import { useContext, useMemo, useState } from 'react';
 import { Box, Text } from 'ink';
 import SelectInput from 'ink-select-input';
 import { navInitOptions, NavOptionsContext } from '../../contexts/index.js';
@@ -12,7 +12,7 @@ export default function NavPanel() {
 	const { navOptions, setNavOptions } =
 		useContext<NavOptionsContextProps>(NavOptionsContext);
 
-	const [updateTree, setUpdateTree] = useState<boolean>(true); // este estado es la dependecia que deside cuando reiniciar el useMemo de decisionTree
+	const [updateTree, setUpdateTree] = useState<boolean>(true);
 	const decisionTree = useMemo(() => { return new DecisionTree() }, [updateTree]);
 
 	const handleSelect = (
