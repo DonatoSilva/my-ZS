@@ -7,12 +7,16 @@ import {
 	NavOptionsPanelProps,
 } from '../../interfaces/navOptionsPanel.js';
 import { DecisionTree } from '../../logic/decisionTree.js';
+import { LearningInputs } from '../learningInputs/LearningInputs.js';
+
+
 
 export default function NavPanel() {
 	const { navOptions, setNavOptions } =
 		useContext<NavOptionsContextProps>(NavOptionsContext);
-
 	const [updateTree, setUpdateTree] = useState<boolean>(true);
+	const [isLearningNewAnimal, setIsLearningNewAnimal] = useState<boolean>(false);
+
 	const decisionTree = useMemo(() => { return new DecisionTree() }, [updateTree]);
 
 	const handleSelect = (
@@ -46,7 +50,20 @@ export default function NavPanel() {
 				options: navInitOptions,
 			});
 
-			setUpdateTree(!updateTree)
+			return;
+		}
+
+		if (value === 'teach_animal') {
+			setIsLearningNewAnimal(true);
+
+			setNavOptions({
+				question: '¿Desea intentarlo de nuevo?',
+				options: [
+					{ label: 'Volver al menú', value: 'initNav' },
+					{ label: 'Salir', value: 'exit' }
+				],
+			});
+
 			return;
 		}
 
@@ -59,14 +76,30 @@ export default function NavPanel() {
 	};
 
 	return (
-		<Box flexDirection="column" rowGap={2} flexWrap="wrap">
-			<Box width={45} alignItems="center">
-				<Text bold>{navOptions.question}</Text>
-			</Box>
-			<SelectInput
-				items={navOptions.options}
-				onSelect={item => handleSelect(item.value, navOptions)}
-			/>
+		<Box key='navPanel' flexDirection="column" rowGap={2} flexWrap="wrap">
+			{!isLearningNewAnimal ?
+				(
+					<>
+						<Box width={45} alignItems="center">
+							<Text bold>{navOptions.question}</Text>
+						</Box>
+						<SelectInput
+							items={navOptions.options}
+							onSelect={item => handleSelect(item.value, navOptions)}
+						/>
+					</>
+				)
+				:
+				(
+					<>
+						<LearningInputs
+							decisionTree={decisionTree}
+							setIsLearningNewAnimal={setIsLearningNewAnimal}
+							updateTree={{ updateTree, setUpdateTree }}
+						/>
+					</>
+				)
+			}
 		</Box>
 	);
 }

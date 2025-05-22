@@ -1,19 +1,14 @@
-import { fileURLToPath } from "url";
-import initTree from "../data/initTree.json" with { type: "json" };
 import { NavOptionsPanelProps } from "../interfaces/navOptionsPanel.js";
 import { isAnimalNode, isQuestionNode, TreeNode } from "../interfaces/tree.js";
-import { TreeLearning } from "./treeLearning.js";
-import path from "path";
-
-const gameTree: TreeNode = initTree as TreeNode;
+import { loadDecisionTree } from "./utils/treeLoader.js";
 
 export class DecisionTree {
-    private roadmapRoute: string[] = [];
+    private roadmapRoute: ('yes' | 'no')[] = [];
     private root: TreeNode;
     private currentNode: TreeNode;
 
     constructor() {
-        this.root = gameTree;
+        this.root = loadDecisionTree();
         this.currentNode = this.root;
     }
 
@@ -30,7 +25,12 @@ export class DecisionTree {
     }
 
     private reset(): void {
+        this.root = loadDecisionTree();
         this.currentNode = this.getRoot();
+    }
+
+    public getRoadmapRoute(): ('yes' | 'no')[] {
+        return [...this.roadmapRoute];
     }
 
     private handleReset(defaultOptions: NavOptionsPanelProps['options']): NavOptionsPanelProps {
@@ -70,25 +70,9 @@ export class DecisionTree {
         };
     }
 
-    private handleTeachAnimal(defaultOptions: NavOptionsPanelProps['options']): NavOptionsPanelProps {
-        const __filename = fileURLToPath(import.meta.url);
-        const __dirname = path.dirname(__filename);
-        const parentDirt = path.join(__dirname, '..');
-        const jsonPath = path.join(parentDirt, 'data', 'initTree.json');
-
-        const treeLearning = new TreeLearning(this.roadmapRoute, jsonPath);
-
-        treeLearning.updateTree();
-        return {
-            question: "Entendido. ¿Qué animal era y qué pregunta lo diferencia?",
-            options: [
-                ...defaultOptions
-            ],
-        };
-    }
-
     private navigateQuestionNode(answer: 'yes' | 'no', defaultOptions: NavOptionsPanelProps['options']): NavOptionsPanelProps {
         const currentNode = this.getCurrentNode();
+
         if (!isQuestionNode(currentNode)) {
             return { question: "Error interno: Se esperaba un nodo de pregunta.", options: defaultOptions };
         }
@@ -168,9 +152,7 @@ export class DecisionTree {
             return this.handleStartGame(defaultOptions);
         }
 
-        if (answer === 'teach_animal') {
-            return this.handleTeachAnimal(defaultOptions);
-        }
+
 
         const currentNode = this.getCurrentNode();
 

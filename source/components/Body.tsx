@@ -1,16 +1,32 @@
-import React from 'react';
 import { Box, Text } from 'ink';
 import { BodyProps } from '../interfaces/body.js';
+import { useState } from 'react';
+
+import FirstCat from '../components/animals/cat/FirstCat.js';
+import SecondCat from '../components/animals/cat/SecondCat.js';
+import ThirdCat from '../components/animals/cat/ThirdCat.js';
 
 export default function Body({
-	currentAnimal,
-	animals,
 	questionCount,
 	children,
 }: BodyProps) {
+	const [indexAnimal, setIndexAnimal] = useState<number>(0);
+
+	const animal: Array<() => JSX.Element> = [FirstCat, SecondCat, ThirdCat];
+
+	setTimeout(() => {
+		if (indexAnimal < animal.length - 1) {
+			setIndexAnimal(indexAnimal + 1);
+			return;
+		}
+
+		setIndexAnimal(0);
+	}, 2000);
+
 	return (
 		<Box flexDirection="column" minWidth={'80%'}>
 			<Box
+				key='header'
 				flexDirection="row"
 				justifyContent="space-between"
 				padding={1}
@@ -22,6 +38,7 @@ export default function Body({
 				<Text bold>Preguntas: {questionCount}</Text>
 			</Box>
 			<Box
+				key='body'
 				justifyContent="center"
 				alignItems="center"
 				flexDirection="row"
@@ -32,7 +49,7 @@ export default function Body({
 				borderColor={'#666666'}
 				gap={4}
 			>
-				{animals[currentAnimal]!()}
+				{animal[indexAnimal]!()}
 				{children}
 			</Box>
 		</Box>
