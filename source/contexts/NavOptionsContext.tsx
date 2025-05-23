@@ -2,7 +2,7 @@ import { createContext, ReactNode, useState } from 'react';
 import {
 	NavOptionsContextProps,
 	NavOptionsPanelProps,
-} from '../interfaces/navOptionsPanel.js';
+} from '../interfaces/NavOptionsPanel.js';
 
 export const navInitOptions = [
 	{
