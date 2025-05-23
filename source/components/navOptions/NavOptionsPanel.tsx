@@ -1,19 +1,24 @@
 import { useContext, useMemo, useState } from 'react';
 import { Box, Text } from 'ink';
 import SelectInput from 'ink-select-input';
-import { navInitOptions, NavOptionsContext } from '../../contexts/index.js';
+import { navInitOptions, NavOptionsContext } from '../../contexts/NavOptionsContext.js';
 import {
 	NavOptionsContextProps,
 	NavOptionsPanelProps,
 } from '../../interfaces/navOptionsPanel.js';
 import { DecisionTree } from '../../logic/decisionTree.js';
 import { LearningInputs } from '../learningInputs/LearningInputs.js';
+import { CountQuiestionsContext } from '../../contexts/CountQuestions.js';
+import { CountQuestionsType } from '../../interfaces/countQuestions.js';
 
 
 
 export default function NavPanel() {
 	const { navOptions, setNavOptions } =
 		useContext<NavOptionsContextProps>(NavOptionsContext);
+
+	const { count, incrementCount, resetCount } = useContext<CountQuestionsType>(CountQuiestionsContext);
+
 	const [updateTree, setUpdateTree] = useState<boolean>(true);
 	const [isLearningNewAnimal, setIsLearningNewAnimal] = useState<boolean>(false);
 
@@ -49,7 +54,7 @@ export default function NavPanel() {
 				question: '¿Que desea hacer?',
 				options: navInitOptions,
 			});
-
+			resetCount();
 			return;
 		}
 
@@ -68,6 +73,14 @@ export default function NavPanel() {
 		}
 
 		const { question, options } = decisionTree.processAnswerAndGetUI(value);
+
+		if (value == 'reset') {
+			resetCount()
+		}
+
+		if (value === 'yes' || value === 'no') {
+			incrementCount();
+		}
 
 		setNavOptions({
 			question,

@@ -1,17 +1,19 @@
 import { Box, Text } from 'ink';
 import { BodyProps } from '../interfaces/body.js';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 
 import FirstCat from '../components/animals/cat/FirstCat.js';
 import SecondCat from '../components/animals/cat/SecondCat.js';
 import ThirdCat from '../components/animals/cat/ThirdCat.js';
+import { CountQuestionsType } from '../interfaces/countQuestions.js';
+import { CountQuiestionsContext } from '../contexts/CountQuestions.js';
 
 export default function Body({
-	questionCount,
 	children,
 }: BodyProps) {
 	const [indexAnimal, setIndexAnimal] = useState<number>(0);
 
+	const { count } = useContext<CountQuestionsType>(CountQuiestionsContext)
 	const animal: Array<() => JSX.Element> = [FirstCat, SecondCat, ThirdCat];
 
 	setTimeout(() => {
@@ -35,7 +37,7 @@ export default function Body({
 				<Text bold color={'blackBright'}>
 					ZOO en la Sombra
 				</Text>
-				<Text bold>Preguntas: {questionCount}</Text>
+				<Text bold>Preguntas: {count}</Text>
 			</Box>
 			<Box
 				key='body'

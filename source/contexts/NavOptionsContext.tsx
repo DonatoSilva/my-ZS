@@ -1,4 +1,4 @@
-import React, { createContext, ReactNode, useState } from 'react';
+import { createContext, ReactNode, useState } from 'react';
 import {
 	NavOptionsContextProps,
 	NavOptionsPanelProps,
@@ -29,7 +29,7 @@ export const NavOptionsContext = createContext<NavOptionsContextProps>({
 
 export const NavOptionsProvider = ({ children }: { children: ReactNode }) => {
 	const [navOptions, setNavOptions] = useState<NavOptionsPanelProps>({
-		question: '¿Que desea hacer?', 
+		question: '¿Que desea hacer?',
 		options: navInitOptions,
 	});
 
