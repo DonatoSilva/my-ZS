@@ -1,6 +1,6 @@
 # ZOO en la Sombra (zs-cli)
 
-**¡Bienvenido a ZOO en la Sombra!** Un divertido juego de adivinanzas de animales en tu terminal,
+**¡Bienvenido a ZOO en la Sombra!** Un divertido juego de adivinanzas de animales en tu terminal, desarrollado con React.
 
 Construido con:
 <br/>
