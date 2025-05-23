@@ -3,6 +3,9 @@
 **¡Bienvenido a ZOO en la Sombra!** Un divertido juego de adivinanzas de animales en tu terminal,
 
 Construido con:
+<br/>
+<br/>
+
 <img src="https://github.com/vadimdemedes/ink/blob/master/media/logo.png?raw=true" width="50" alt="Ink logo"/>
 &nbsp;&nbsp;&nbsp;
 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" width="45" alt="React logo"/>
@@ -11,6 +14,7 @@ Construido con:
 
 <br/>
 <br/>
+
 ![Demostración del Juego](https://res.cloudinary.com/dvibg2f6y/image/upload/v1748011732/20250523-1441-35.2650210_chifn2.gif)
 
 ## ¿De qué trata?
