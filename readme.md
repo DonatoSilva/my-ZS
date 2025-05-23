@@ -3,15 +3,14 @@
 **¡Bienvenido a ZOO en la Sombra!** Un divertido juego de adivinanzas de animales en tu terminal,
 
 Construido con:
+<img src="https://github.com/vadimdemedes/ink/blob/master/media/logo.png?raw=true" width="50" alt="Ink logo"/>
+&nbsp;&nbsp;&nbsp;
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" width="45" alt="React logo"/>
+&nbsp;&nbsp;&nbsp;
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg" width="45" alt="TypeScript logo"/>
 
-<div align="center">
-  <img src="https://github.com/vadimdemedes/ink/blob/master/media/logo.png?raw=true" width="50" alt="Ink logo"/>
-  &nbsp;&nbsp;&nbsp;
-  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" width="45" alt="React logo"/>
-  &nbsp;&nbsp;&nbsp;
-  <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg" width="45" alt="TypeScript logo"/>
-</div>
-
+<br/>
+<br/>
 ![Demostración del Juego](https://res.cloudinary.com/dvibg2f6y/image/upload/v1748011732/20250523-1441-35.2650210_chifn2.gif)
 
 ## ¿De qué trata?
@@ -43,7 +42,7 @@ Sigue estos pasos para poner en marcha ZOO en la Sombra en tu máquina:
 1.  **Clona el Repositorio (si aún no lo has hecho):**
 
     ```bash
-    git clone <URL_DEL_REPOSITORIO>
+    git clone https://github.com/DonatoSilva/my-ZS.git
     cd my-ZS
     ```
 
